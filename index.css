@@ -1,4 +1,6 @@
 /* Style général*/
+/*Version mobile*/
+
 * {font-family: 'Roboto', sans-serif;}
 * {font-family: 'Shrikhand', cursive;}
 
@@ -12,48 +14,123 @@ h1, h2, h3, p, a {
     }
 }
 
-/*Logo + Formulaire de recherche + Bouton */
+/*Header - Logo + Formulaire de recherche + Bouton */
 
 header {
     text-align: center;
+    border : 1px solid #f2f2f2;
 }
 .logo {
     padding: 10px;
 }
+#barre_recherche {
+    background-color: rgb(228, 226, 226);
+    padding: 12px 0 12px 28px;
+}
+input {
+    font-family: 'Roboto';
+    color: black;
+    border: none;
+    background: transparent;
+    padding-left: 10px;
+}
 .background {
     background-color: #f2f2f2;
-    padding :10px
+    height: 250px;
+    padding-top: 25px;
 }
 h1 {
     font-size: 30px;
-    font-weight: 400;
     padding : 10px 0 10px 0;
 }
 p {
     font-size: 20px;
     font-weight: 350;
-    padding: 10px 0 10px 0;
+    padding: 10px 0 20px 0;
 }
+a.bouton_explorer {
+    padding : 15px;
+    border : 2px solid rgb(207, 55, 174) ;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Roboto';
+    background-color: rgba(190, 30, 150, 0.774);
+    color: white;
+}
+
+/*Section - Fonctionnement*/
+
 section {
-    margin: 10%;
+    margin: 10% 10% 10% 10% ;
 }
 h2 {
     padding: 0 0 20px 0;
 }
 .mobile, .liste, .store {
     display: flex;
+    align-items: center;
+    padding: 10px 0 10px;
+    margin: 5px 0 20px ;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0 5px 10px 0 gray;
+}
+.mobile :hover, .liste :hover, .store :hover {
+    background: pink;
 }
 h3 {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 400;
 }
-main {
-    margin: 5%
+.numero {
+    font-size: 13px;
+    font-weight: bold;
+    padding : 5px 7px 5px 7px;
+    border-radius: 30px;
+    background-color: blueviolet;
+    color: white;
 }
+.fa-mobile-screen-button, .fa-list-ul, .fa-store {
+    padding: 15px;
+}
+/*Main - Restaurants*/
+
+main {
+    margin: 5%;
+    background-color: #f2f2f2;
+}
+.carte_resto {
+    width: min-content;
+}
+img {
+    width: 432px;
+    border: 2px solid transparent;
+    border-radius: 20px 20px 0 0 ;
+    object-fit: cover;
+}
+.menil, .charon, .rouge, .folie {
+    display: flex;
+    justify-content: space-between;
+}
+/*Footer - Infos*/
 footer {
     margin: 5%;
+    background-color: rgb(65, 62, 62);
+    color: white;
 }
 .logo_footer {
     width: 30%;
 }
-
+.fa-utensils, .fa-handshake-angle {
+    color: white;
+}
+ul {
+    padding: 0;
+}
+li a {
+    list-style: none;
+    text-decoration: none;
+}
+li a .ustensil .hand {
+    display: inline-block;
+}
