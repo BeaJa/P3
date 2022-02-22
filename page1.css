@@ -1,0 +1,123 @@
+/* Style général*/
+/*Version mobile*/
+
+* {font-family: 'Roboto', sans-serif;}
+* {font-family: 'Shrikhand', cursive;}
+
+h2, h3, p, a {
+    font-family: 'Roboto' , sans-serif;
+    margin: 0;
+}
+@media screen and (min-width: 510px) {
+    * {
+    box-sizing: border-box;
+    }
+}
+/*page1 - La palette du gout*/
+
+    /*Header*/
+
+header {
+    text-align: center;
+    border : 1px solid #f2f2f2;
+}
+.logo {
+    margin: 0 auto;
+    width: 250px;
+    padding: 10px 0 10px;
+}
+img {
+    width: 100%;
+    border-radius: 25px 25px 0 0 ;
+    display: block;
+    z-index: 0;
+}
+/* Main - menu */
+
+main {
+    margin : 0 10px ;
+}
+h1 {
+    font-size: 1.5em;
+}
+.titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carte_palette {
+    background-color: #f2f2f2;
+    padding : 20px ;
+    border-radius: 25px;
+    z-index: 2;
+}
+h2 {
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+.menu {
+    background-color: white;
+    border-radius: 25px;
+    margin: 20px 0;
+    padding: 10px;
+    box-shadow: 0 5px 10px gray;
+}
+.circle {
+    display: flex;
+    justify-content: space-between;
+}
+.menu p {
+    text-overflow: ellipsis;
+}
+.fa-circle {
+    align-items: center;
+}
+button {
+    margin: 20px 90px ;
+    padding : 15px 55px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Roboto';
+    font-size: 1.2em;
+    background : linear-gradient(#ff79da, #9356dc);
+    color: white;
+    box-shadow: 0 5px 10px 0 rgb(190, 189, 189);
+    cursor: pointer;
+}
+button:hover {
+    opacity: 80%;
+}
+
+/*Footer - Infos*/
+footer {
+    margin: 5%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    background-color: rgb(65, 62, 62);
+    color: white;
+}
+.logo_footer {
+    width: 35%;
+    padding-top: 20px;
+}
+.infos {
+    display: flex;
+    flex-direction: column;
+}
+a.fa-solid.fa-utensils {
+    display: flex;
+    align-items: center;
+}
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px 10px 0;
+}
+a::before{
+    font:'fontawesome';
+    padding:0 20px 5px 0;
+}
+span {
+    font-family: 'Roboto';
+    font-weight: 400;
+}
