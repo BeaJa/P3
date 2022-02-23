@@ -94,7 +94,7 @@ h2 {
     box-shadow: 0 5px 10px 0 rgb(216, 214, 214);
 }
 h3 {
-    font-size: 23px;
+    font-size: 20px;
 }
 .numero {
     font-size: 13px;
@@ -128,7 +128,7 @@ main {
     background-color: white;
     box-shadow: 0 10px 10px 0 rgb(209, 206, 206);
 }
-img {
+main img {
     width: 100%;
     border: 1px solid transparent;
     border-radius: 25px 25px 0 0 ;
