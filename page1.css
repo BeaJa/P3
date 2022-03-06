@@ -4,7 +4,7 @@
 * {font-family: 'Roboto', sans-serif;}
 * {font-family: 'Shrikhand', cursive;}
 
-h2, h3, p, a {
+h2, h3, h4, a {
     font-family: 'Roboto' , sans-serif;
     margin: 0;
 }
@@ -19,18 +19,22 @@ h2, h3, p, a {
 
 header {
     text-align: center;
-    border : 1px solid #f2f2f2;
 }
 .logo {
     margin: 0 auto;
-    width: 250px;
     padding: 10px 0 10px;
 }
-img {
+::before {
+    font-family: 'fontawesome';
+    font-size: 20px;
+
+}
+main img {
     width: 100%;
     border-radius: 25px 25px 0 0 ;
     display: block;
-    z-index: 0;
+    position: relative;
+    z-index: -1;
 }
 /* Main - menu */
 
@@ -39,38 +43,109 @@ main {
 }
 h1 {
     font-size: 1.5em;
+    font-weight: normal;
 }
 .titre {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.carte_palette {
+.carte {
     background-color: #f2f2f2;
     padding : 20px ;
-    border-radius: 25px;
+    border-radius: 25px 25px 0 0;
     z-index: 2;
 }
 h2 {
     font-size: 1.2em;
+    margin-top: 10px;
     padding: 10px 0;
+    font-weight: normal;
 }
-.menu {
-    background-color: white;
-    border-radius: 25px;
-    margin: 20px 0;
-    padding: 10px;
-    box-shadow: 0 5px 10px gray;
+h3, h4 {
+    margin: 5px 0 5px 15px;
 }
-.circle {
+h4 {
+    font-weight: normal;
+}
+.souligne {
+    width: 50px;
+    height: 3px;
+    background-color: #99e2d0;
+}
+.plat {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 5px 10px gray;
+    overflow: hidden;
+    animation: apparition 0.5s ease-out ;
 }
-.menu p {
+#ticket {
+    flex: 2;
+    padding-top: 5px;
+}
+#ticket, h4, h3{
+    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 }
+#ticket, .euro:hover {
+    cursor: pointer;
+}
+#euro {
+    display: flex;
+    width: 120px;
+    position: relative;
+    left: 73px;
+}
+.e {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.e::after {
+    content: "\f058";
+    font-family: 'fontawesome';
+    font-size: 20px;
+    display: block;
+    padding: 20px;
+    background-color: #99e2d0;
+    color: white;
+    position: relative;
+    left: 35px;
+    transition: 2s;
+}
+#ticket:hover + #euro {
+    animation: visible 1.5s 1 both;
+}
+.e::after:hover {
+    transition : 2s ;
+    animation: roue 3s 1 both ;
+}
+
+@keyframes visible {
+    0% { left: 50px ; }
+    100% { left: 0px ; }
+}
+@keyframes roue {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+@keyframes apparition {
+    0% { opacity: 0 ;
+        transform: translateY(100px);}
+    100% { opacity: 1 ;
+        transform: translateY(0px);}
+}
+#bouton {
+    text-align: center;
+}
 button {
-    margin: 20px 90px ;
+    margin: 20px 0 ;
     padding : 15px 55px;
     border: none;
     border-radius: 25px;
@@ -86,8 +161,9 @@ button:hover {
 }
 
 /*Footer - Infos*/
+
 footer {
-    margin: 5%;
+    margin: 0 10px 5px 10px;
     padding-left: 20px;
     padding-bottom: 10px;
     background-color: rgb(65, 62, 62);

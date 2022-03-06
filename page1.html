@@ -9,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1d406d3eaf.js" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>La palette du Goût</title>
 </head>
 <body>
     <!--Logo-->
     <header>
         <div class="logo">
+            <a href="#"><i class="fas fa-arrow-left"></i></a>
             <img class="log" src="images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood">
         </div>
     </header>
@@ -25,56 +26,103 @@
         <main>
             <img src="images/restaurants/Palettedugout.jpg" alt="La palette du goût">
 
-            <div class="carte_palette">
+            <div class="carte">
                 <span class="titre"><h1>La palette du goût</h1><i class="fa-regular fa-heart"></i></span>
 
-                    <h2>ENTREES</h2>
-                <div class="menu">
-                    <h3>Fricassée d'escargot</h3>
-                    <span class="circle"><p>Au piment d'Espelette 25€ </p><i class="fa-regular fa-circle-check"></i></span>
+                <h2>ENTREES</h2>
+                    <div class="souligne"></div>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Fricassée d'escargot</h3>
+                            <h4>Au piment d'Espelette</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">25€</span>
+                    </div>	
                 </div>
-                <div class="menu ">
-                    <h3>Foie gras de canard mi-cuit</h3>
-                    <p>Et ses copeaux de truffe noire 35€</p><i class="fa-regular fa-circle-check"></i>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Foie gras de canard mi-cuit</h3>
+                            <h4>Et ses copeaux de truffe noire</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">35€</span>
+                    </div>
                 </div>
-                <div class="menu">
-                    <h3>Oeuf au plat</h3>
-                    <p>Assaisonné à la truffe sur lit de caviar 20€</p><i class="fa-regular fa-circle-check"></i>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Oeuf au plat</h3>
+                            <h4>Assaisonné à la truffe sur lit de caviar</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">20€</span>
+                    </div>
                 </div>
 
-                    <h2>PLATS</h2>
-                <div class="menu"> 
-                    <h3>Filet de boeuf aux herbes</h3>
-                    <p>Accompagné de sa ribambelle de légumes 40€</p><i class="fa-regular fa-circle-check"></i>
+                <h2>PLATS</h2>
+                    <div class="souligne"></div>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Filet de boeuf aux herbes</h3>
+                            <h4>Accompagné de sa ribambelle de légumes</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">40€</span>
+                    </div>
                 </div>
-                <div class="menu">
-                    <h3>Parmentier de queue de boeuf</h3>
-                    <p>A la truffe noire sur sa purée de panais 35€</p><i class="fa-regular fa-circle-check"></i>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Parmentier de queue de boeuf</h3>
+                            <h4>A la truffe noire sur sa purée de panais</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">35€</span>
+                    </div>
                 </div>
-                <div class="menu">
-                    <h3>Filet de turbot</h3>
-                    <p>Aux agrumes 44€</p><i class="fa-regular fa-circle-check"></i>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Filet de turbot</h3>
+                            <h4>Aux agrumes</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">44€</span>
+                    </div>
                 </div>
 
-                    <h2>DESSERTS</h2>
-                <div class="menu">
-                    <h3>Paris-Brest</h3>
-                    <p>Revisité 18€</p><i class="fa-regular fa-circle-check"></i>
+                <h2>DESSERTS</h2>
+                    <div class="souligne"></div>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Paris-Brest</h3>
+                            <h4>Revisité</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">18€</span>
+                    </div>
                 </div>
-                <div class="menu">
-                    <h3>Macaron au chocolat d'exception</h3>
-                    <p>Et glace à la vanille de Madagascar 22€</p><i class="fa-regular fa-circle-check"></i>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Macaron au chocolat d'exception</h3>
+                            <h4>Et glace à la vanille de Madagascar</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">22€</span>
+                    </div>
                 </div>
-                <div class="menu">
-                    <h3>Mousse au chocolat</h3>
-                    <p>Au piment d'Espelette et à la truffe noire 23€ </p><i class="fa-regular fa-circle-check"></i>
+                <div class="plat">
+                    <div id="ticket">
+                        <h3>Mousse au chocolat</h3>
+                        <h4>Au piment d'Espelette et à la truffe noire</h4>
+                    </div>
+                    <div id="euro">
+                        <span class="e">23€</span>
+                    </div>
+                </div>
+            
+                <div id="bouton">
+                    <button type="submit">Commander</button>
                 </div>
             </div>
-            
-         
-                <button type="submit">Commander</button>
-            
-
         </main>
 
     <!--Info + Contact-->
