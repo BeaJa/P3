@@ -37,16 +37,16 @@
     <section>
         <h2>Fonctionnement</h2>
             <div class="btn">
-            <a href="#" class="mobile" target="_blank"><p class="numero">1</p><i class="fa-solid fa-mobile-screen-button"></i>
-            <h3>Choisissez un restaurant</h3></a>
+                <a href="#carte_resto" class="mobile"><p class="numero">1</p><i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Choisissez un restaurant</h3></a>
             </div>
             <div class="btn">
-            <a href="#" class="liste" target="_blank"><p class="numero">2</p><i class="fa-solid fa-list-ul"></i>
-            <h3>Composez votre menu</h3></a>
+                <a href="#carte_resto" class="liste"><p class="numero">2</p><i class="fa-solid fa-list-ul"></i>
+                    <h3>Composez votre menu</h3></a>
             </div>
             <div class="btn">
-            <a href="#" class="store" target="_blank"><p class="numero">3</p><i class="fa-solid fa-store"></i>
-            <h3>Dégustez au restaurant</h3></a>
+                <a href="#carte_resto" class="store"><p class="numero">3</p><i class="fa-solid fa-store"></i>
+                    <h3>Dégustez au restaurant</h3></a>
             </div>
     </section>
 
@@ -54,36 +54,35 @@
 
     <main class="restaurants">
         <h2>Restaurants</h2>
-        <div class="carte_resto">
+        <div id="carte_resto">
             <a href="page1.html"><img src="images/restaurants/Palettedugout.jpg" alt="La palette goût">
             <div class="carte_text">
                 <h3>La palette du goût</h3>
-                <p class="menil">Ménilmontant<i class="fa-regular fa-heart fa-xl"></i></p>
+                <p class="quartier">Ménilmontant<i class="far fa-heart"></i></p>
             </div>
             </a>
         </div>
-        <div class="carte_resto">
-            <a href="page2.html"><img class="note" src="images/restaurants/noteenchante.jpg" alt="La note enchantée">
+        <div id="carte_resto">
+            <a href="page2.html"><img src="images/restaurants/noteenchante2.jpg" alt="La note enchantée">
             <div class="carte_text">
                 <h3>La note enchantée</h3>
-                <p class="charon">Charonne<i class="fa-regular fa-heart fa-xl"></i></p>
+                <p class="quartier">Charonne<i class="far fa-heart"></i></p>
             </div>
             </a>
         </div>
-        <div class="carte_resto">
-            
+        <div id="carte_resto">
             <a href="page3.html"><img src="images/restaurants/alafrancaise.jpg" alt="A la française">
             <div class="carte_text">
                 <h3>A la française</h3>
-                <p class="rouge">Cité Rouge<i class="fa-regular fa-heart fa-xl"></i></p>
+                <p class="quartier">Cité Rouge<i class="far fa-heart"></i></p>
             </div>
             </a>
         </div>
-        <div class="carte_resto">
+        <div id="carte_resto">
             <a href="page4.html"><img src="images/restaurants/delicedessens.jpg" alt="Le délice des sens">
             <div class="carte_text">
                 <h3>Le délice des sens</h3>
-                <p class="folie">Folie-Méricourt<i class="fa-regular fa-heart fa-xl"></i></p>
+                <p class="quartier">Folie-Méricourt<i class="far fa-heart"></i></p>
             </div>
             </a>
         </div>
@@ -98,8 +97,8 @@
             <div class="infos">
                 <a class="fa-solid fa-utensils" href="#"><span>Proposer un restaurant</span></a>	
 		        <a class="fa-solid fa-handshake-angle" href="#"><span>Devenir partenaire</span></a>
-                <a href="#">Mentions légales</a>
-                <a href="#">Contact</a>
+                <a href="#" class="mentions">Mentions légales</a>
+                <a href="mailto:email@exemple.com?subjet=subjet text" class="contact">Contact</a>
             </div>
         </div>
     </footer>
