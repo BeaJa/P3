@@ -1,0 +1,241 @@
+/* Style général*/
+/*Version mobile*/
+
+* {font-family: 'Roboto', sans-serif;}
+* {font-family: 'Shrikhand', cursive;}
+$font1: 'Roboto', sans-serif ;
+$font2: 'Shrikhand', cursive;
+
+h2, h3, h4, a, p {
+    font-family: $font1;
+    margin: 0;
+}
+$colorprim :#9356dc;
+$colorsecond :#ff79da;
+$colortertiaire : #99e2d0;
+$boxshadow:#bebdbd ;
+$backgroundcolor : #f2f2f2 ;
+$backgroundcolorfooter : #3e3e3c;
+$backgroundtransparent1 : rgba(147, 86, 220, 0.3);
+$backgroundtransparent2 : rgba(255, 121, 218, 0.3);
+@media screen and (min-width: 510px) {
+    * {
+    box-sizing: border-box;
+    }
+}
+/*page1 - La palette du gout*/
+
+    /*Header*/
+
+header {
+    text-align: center;
+}
+.logo {
+    display: flex;
+    padding: 10px 0 10px;
+    gap: 65px;
+}
+#index {
+   padding-left: 20px;
+}
+.log {
+    max-width: 300px;
+}
+.fas.fa-arrow-left::before {
+    font-family: 'fontawesome';
+    color:black;
+    font-size: 30px;
+    position: relative;
+}
+main img {
+    width: 100%;
+    display: block;
+}
+/* Main - menu */
+
+main {
+    margin : 0 10px ;
+}
+h1 {
+    font-size: 35px;
+    font-weight: normal;
+}
+.fa-heart {
+    font-size: x-large;
+}
+.titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carte {
+    background-color: $backgroundcolor;
+    padding : 20px ;
+    border-radius: 25px 25px 0 0;
+    z-index: 2;
+    position: relative;
+    top: -25px;
+}
+h2 {
+    font-size: 1.2em;
+    margin-top: 15px;
+    padding: 10px 0;
+    font-weight: normal;
+}
+h3 {
+    margin: 10px 0 5px 15px;
+    cursor: pointer;
+}
+h4 {
+    font-weight: normal;
+    margin: 5px 0 10px 15px;
+}
+.souligne {
+    width: 50px;
+    height: 3px;
+    background-color: $colortertiaire;
+}
+.plat1, .plat2, .plat3 {
+    display: flex;
+    width: 100%;
+    margin: 18px 0;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 5px 7px $boxshadow;
+    overflow: hidden;
+    
+}
+.plat1 {
+    animation: apparition1 1s ease ;
+}
+.plat2 {
+    animation: apparition2 2s ease;
+}
+.plat3 {
+    animation: apparition3 3s ease;
+}
+@keyframes apparition1 {
+    0% { opacity: 0;}
+    100% { opacity: 1;} 
+}
+@keyframes apparition2 {
+    0% { opacity: 0;}
+    100% { opacity: 1;} 
+}
+@keyframes apparition3 {
+    0% { opacity: 0;}
+    100% { opacity: 1;} 
+}
+#ticket {
+    width: 90%;
+    
+}
+h4 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: width 0s 200ms ease-in-out;
+}
+.euro {
+    font-family: $font1;
+    display: flex;
+    position: relative;
+    width: 50px;
+    padding-left: 20px;
+    align-items: flex-end;
+}
+p {
+    width: 50px;
+    padding-bottom: 8px;
+
+}
+.e {
+    display: block;
+    padding: 25px;
+    width: 50px;
+    background-color: $colortertiaire;
+    color: white;
+    position: relative;
+    left: 24px;
+}
+#ticket:hover h4{
+    cursor: pointer;
+    width: 80%;
+}
+#ticket:hover + .euro {
+    transition: 1s ease-out ;
+    transform: translateX(-65px) ; 
+}
+/*
+.e {
+    &.rotation {
+        transform: rotate(1turn);
+    }
+}*/
+.fa-circle-check {
+    position: relative;
+    animation: rotation -1s 2s linear 999;
+}
+@keyframes rotation {
+    0% { transform: rotate(0deg);}
+    50% { transform: rotate(-360deg);}
+    100% {transform: rotate(0deg)}
+}
+#bouton {
+    text-align: center;
+}
+button {
+    margin: 20px 0 ;
+    padding : 18px 55px;
+    border: none;
+    border-radius: 30px;
+    font-family: $font1;
+    font-size: 1.2em;
+    background : (linear-gradient($colorsecond, $colorprim));
+    color: white;
+    box-shadow: 0 5px 10px 0 $boxshadow;
+    cursor: pointer;
+}
+button:hover {
+    background: lighten($colorprim, 20%) ;
+    box-shadow: 0 5px 10px 0 $colorprim;
+}
+
+/*Footer - Infos*/
+
+footer {
+    margin: 0 10px 5px 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    background-color: rgb(65, 62, 62);
+}
+.logo_footer {
+    width: 35%;
+    padding: 20px 0;
+}
+.infos {
+    display: flex;
+    flex-direction: column;
+}
+.mentions:hover, .contact:hover {
+    color: $colorprim;
+}
+a.fa-solid.fa-utensils {
+    display: flex;
+    align-items: center;
+}
+a.fa-solid:hover {
+    color: $colorprim;
+}
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px 10px 0;
+}
+a::before {
+    padding:0 20px 5px 0;
+}
+span {
+    font-family: $font1;
+    font-weight: 400;
+}

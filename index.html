@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,33 +30,24 @@
                 <i class="fa-solid fa-location-dot material-icons"></i>
                 <input type="text" placeholder="Paris, Belleville">
             </div>
-            <div class="background">
+            <div id="background">
                 <h1>Réservez le menu qui<br>vous convient</h1>
                     <p>Découvrez des restaurants d'exception,<br>sélectionnés par nos soins.</p><br>
-                <a href="#" class="bouton_explorer">Explorer nos restaurants</a>
+                <a href="#" id="bouton_explorer">Explorer nos restaurants</a>
             </div>
-        </div>
-        <div id="presentation">
-            <h2 class="font">Envie de gastronomie dans vote vie !</h2>
-            <p class="font"><strong>Ohmyfood</strong> est là pour vous.</p>
-            <p class="font1">Après New-York, nous voici à Paris avec ses grands restaurants mondialement reconnus.</p>
-            <p class="font1">Notre sélection vous permet d'en profiter à la maison.</p>
-            <p class="font1">Les menus sont concoctés pour vous.
-                <p class="font">Bon Appétit !</p>
-            </p>
         </div>
         <div class="fonction">
             <h2>Fonctionnement</h2>
             <div class="btn">
-                <a href="#carte_resto" class="icone"><p class="numero">1</p><i class="fa-solid fa-mobile-screen-button"></i>
+                <a href=".carte_resto" class="icone"><p class="numero">1</p><i class="fa-solid fa-mobile-screen-button color"></i>
                     <h3>Choisissez un restaurant</h3></a>
             </div>
             <div class="btn">
-                <a href="#carte_resto" class="icone"><p class="numero">2</p><i class="fa-solid fa-list-ul"></i>
+                <a href=".carte_resto" class="icone"><p class="numero">2</p><i class="fa-solid fa-list-ul color"></i>
                     <h3>Composez votre menu</h3></a>
             </div>
             <div class="btn">
-                <a href="#carte_resto" class="icone"><p class="numero">3</p><i class="fa-solid fa-store"></i>
+                <a href=".carte_resto" class="icone"><p class="numero">3</p><i class="fa-solid fa-store color"></i>
                     <h3>Dégustez au restaurant</h3></a>
             </div>
         </div>
@@ -66,36 +57,64 @@
 
     <main class="restaurants">
         <h2>Restaurants</h2>
-        <div id="carte_resto">
-            <a href="page1.html"><img src="images/restaurants/Palettedugout.jpg" alt="La palette goût">
-            <div class="carte_text">
-                <h3>La palette du goût</h3>
-                <p class="quartier">Ménilmontant<i class="far fa-heart"></i></p>
-            </div>
+        <div class="carte_resto">
+            <a href="page1.html">
+                <img src="images/restaurants/Palettedugout.jpg" alt="La palette goût">
+                <div class="text_coeur">
+                    <div class="text">
+                        <h3>La palette du goût</h3>
+                        <p class="quartier">Ménilmontant</p>
+                    </div>
+                    <div class="coeur">
+                        <i class="fa-solid fa-heart plein"></i>
+                        <i class="fa-regular fa-heart vide"></i>
+                    </div>
+                </div>
             </a>
         </div>
-        <div id="carte_resto">
-            <a href="page2.html"><img src="images/restaurants/noteenchante2.jpg" alt="La note enchantée">
-            <div class="carte_text">
-                <h3>La note enchantée</h3>
-                <p class="quartier">Charonne<i class="far fa-heart"></i></p>
-            </div>
+        <div class="carte_resto">
+            <a href="page2.html">
+                <img src="images/restaurants/noteenchante2.jpg" alt="La note enchantée">
+                <div class="text_coeur">
+                    <div class="text">
+                        <h3>La note enchantée</h3>
+                        <p class="quartier">Charonne</p>
+                    </div>
+                    <div class="coeur">
+                        <i class="fa-solid fa-heart plein" ></i>
+                        <i class="fa-regular fa-heart vide"></i>
+                    </div>
+                </div>
             </a>
         </div>
-        <div id="carte_resto">
-            <a href="page3.html"><img src="images/restaurants/alafrancaise.jpg" alt="A la française">
-            <div class="carte_text">
-                <h3>A la française</h3>
-                <p class="quartier">Cité Rouge<i class="far fa-heart"></i></p>
-            </div>
+        <div class="carte_resto">
+            <a href="page3.html" class="selection">
+                <img src="images/restaurants/alafrancaise.jpg" alt="A la française">
+                <div class="text_coeur">
+                    <div class="text">
+                        <h3>A la française</h3>
+                        <p class="quartier">Cité Rouge</p>
+                    </div>
+                    <div class="coeur">
+                        <i class="fa-solid fa-heart plein"></i>
+                        <i class="fa-regular fa-heart vide"></i>
+                    </div>
+                </div>
             </a>
         </div>
-        <div id="carte_resto">
-            <a href="page4.html"><img src="images/restaurants/delicedessens.jpg" alt="Le délice des sens">
-            <div class="carte_text">
-                <h3>Le délice des sens</h3>
-                <p class="quartier">Folie-Méricourt<i class="far fa-heart"></i></p>
-            </div>
+        <div class="carte_resto">
+            <a href="page4.html" class="selection">
+                <img src="images/restaurants/delicedessens.jpg" alt="Le délice des sens">
+                <div class="text_coeur">
+                    <div class="text">
+                        <h3>Le délice des sens</h3>
+                        <p class="quartier">Folie-Méricourt</p>
+                    </div>
+                    <div class="coeur">
+                        <i class="fa-solid fa-heart plein"></i>
+                        <i class="fa-regular fa-heart vide"></i>
+                    </div>
+                </div>
             </a>
         </div>
 

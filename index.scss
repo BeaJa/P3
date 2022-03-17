@@ -33,23 +33,24 @@ header {
     padding: 10px 0 10px;
 }
 
-/*Section - Barre - Backgroung - Présentation - Fonctionnement*/
+/*Section - Barre - Background - Fonctionnement*/
 
 #barre_recherche {
     border-top: 3px solid rgb(211, 209, 209);
     background-color: rgb(228, 226, 226);
-    padding: 12px 0 12px 100px;
+    padding: 12px 0;
+    text-align: center;
 }
 input {
     font-family: 'Roboto';
+    width: 150px;
     font-size: 1.2em;
     color: black;
     border: none;
     background: transparent;
-    padding-left: 10px;
     outline: transparent;
 }
-.background {
+#background {
     text-align: center;
     background-color: $backgroundcolor;
     height: 270px;
@@ -66,44 +67,23 @@ p {
     color: rgb(94, 92, 92);
     font-family: 'Roboto';
 }
-a.bouton_explorer {
+#bouton_explorer {
     padding : 15px;
     border-radius: 25px;
     text-decoration: none;
     font-family: 'Roboto';
     font-size: 1.2em;
-    background : linear-gradient($colorsecond, $colorprim);
+    background-color :linear-gradient(180deg, $colorprim, $colorsecond) ;
     color: white;
     box-shadow: 0 5px 10px 0 $boxshadow;
+    transition: background-color 2s;
 }
-a.bouton_explorer:hover {
-    opacity: 0.85 ;
+#bouton_explorer:hover {
+    background-color: lighten($colorsecond 2%) ;
     box-shadow: 0 5px 10px 0 $colorprim;
-}
-#presentation {
-    padding: 10px 20px;
-    background-image: linear-gradient($backgroundcolor,$backgroundtransparent1,$backgroundtransparent2);
-    
-}
-.font {
-    font-family: 'Shrikhand';
-    font-weight: normal;
 }
 .fonction {
     padding: 30px ;
-}
-h2.font  {
-    padding: 10px 0 10px 0;
-}
-p.font {
-    padding-bottom: 5px;
-    color: #000;
-}
-p.font1 {
-    padding-bottom: 5px;
-    font-size: 18px;
-    font-family: 'Shrikhand';
-    
 }
 .btn {
     background-color: $backgroundcolor;
@@ -128,22 +108,26 @@ h3 {
     font-size: 18px;
 }
 .numero {
+    display: inline-block;
     font-size: 13px;
     font-weight: bold;
-    padding : 5px 7px 5px 7px;
-    border-radius: 40px;
+    width: 25px;
+    height: 25px;
+    padding: 5px 8px;
+    border-color: 2px solid black;
+    border-radius: 50%;
     background-color:$colorprim;
     color: white;
     position: relative;
     left: -15px;
+    text-align: center;
 }
 .fa-mobile-screen-button, .fa-list-ul, .fa-store {
     padding: 15px;
-    color :gray;
     position: relative;
     left: -10px;
 }
-.fa-mobile-screen-button:hover, .fa-list-ul:hover, .fa-store:hover {
+.color {
     color: $colorprim;
 }
 
@@ -158,12 +142,12 @@ main {
     background-color: $backgroundcolor;
     
 }
-#carte_resto {
+.carte_resto {
     border-radius: 25px ;
     background-color: white;
     box-shadow: 0 10px 10px 0 $boxshadow;
 }
-#carte_resto:hover {
+.carte_resto:hover {
     opacity: 0.8;
     box-shadow: 0 5px 10px 0 $colorprim;
 }
@@ -173,8 +157,11 @@ main img {
     border-radius: 25px 25px 0 0 ;
     object-fit: cover;
 }
-
-.carte_text h3 {
+.text_coeur {
+    display: flex;
+    position: relative;
+}
+.text h3 {
     font-size: 20px;
     margin: 10px 20px ;
     color: black;
@@ -185,23 +172,34 @@ main img {
     padding: 0 20px;
     font-size: 18px;
 }
-.far.fa-heart::before{
-    font-size: 25px;
-    color: #000;
+.text {
+     flex: 1;
 }
-@keyframes color-heart {
-    0% {
-        color: #000;
-        opacity: 0;
-    }
-    100% {
+.text_coeur .coeur i{
+    position:absolute;
+    top: 40px;
+}
+.fa-solid, .fa-regular {
+    background-color: transparent;
+}
+.coeur {
+    width: 40px;
+}
+.vide {
+    font-size: 20px;
+    color : $colorprim;
+    opacity: 1;
+}
+.coeur{
+    .fa-heart.plein {
+        font-size: 20px;
         color: $colorprim ;
-        opacity: 1;
+        opacity: 0;
+        transition: 0.1s ease;
     }
 }
-.fa-heart:hover {
-    animation : color-heart 1s 1 ;
-    transition : 1s;
+.fa-heart.plein:hover {
+    opacity: 1;
     cursor: pointer;
 }
 /*Footer - Infos*/
@@ -266,11 +264,6 @@ span {
     }
     .background {
         background-image: iinear-gradient($backgroundcolor, $backgroundtransparent1, $backgroundtransparent2);
-    }
-    #presentation{
-        width: 40%;
-        background-image: iinear-gradient($backgroundcolor, $backgroundtransparent1, $backgroundtransparent2);
-        padding-top: 25px;
     }
     .fonction {
         width: 40%;

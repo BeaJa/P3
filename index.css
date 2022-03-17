@@ -31,24 +31,25 @@ header {
   padding: 10px 0 10px;
 }
 
-/*Section - Barre - Backgroung - Présentation - Fonctionnement*/
+/*Section - Barre - Background - Fonctionnement*/
 #barre_recherche {
   border-top: 3px solid #d3d1d1;
   background-color: #e4e2e2;
-  padding: 12px 0 12px 100px;
+  padding: 12px 0;
+  text-align: center;
 }
 
 input {
   font-family: 'Roboto';
+  width: 150px;
   font-size: 1.2em;
   color: black;
   border: none;
   background: transparent;
-  padding-left: 10px;
   outline: transparent;
 }
 
-.background {
+#background {
   text-align: center;
   background-color: #f2f2f2;
   height: 270px;
@@ -68,53 +69,27 @@ p {
   font-family: 'Roboto';
 }
 
-a.bouton_explorer {
+#bouton_explorer {
   padding: 15px;
   border-radius: 25px;
   text-decoration: none;
   font-family: 'Roboto';
   font-size: 1.2em;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: linear-gradient(180deg, #9356dc, #ff79da);
   color: white;
   -webkit-box-shadow: 0 5px 10px 0 #bebdbd;
           box-shadow: 0 5px 10px 0 #bebdbd;
 }
 
-a.bouton_explorer:hover {
-  opacity: 0.85;
+#bouton_explorer:hover {
+  background: #a16be0;
   -webkit-box-shadow: 0 5px 10px 0 #9356dc;
           box-shadow: 0 5px 10px 0 #9356dc;
 }
 
-#presentation {
-  padding: 10px 20px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), color-stop(rgba(147, 86, 220, 0.3)), to(rgba(255, 121, 218, 0.3)));
-  background-image: linear-gradient(#f2f2f2, rgba(147, 86, 220, 0.3), rgba(255, 121, 218, 0.3));
-}
-
-.font {
-  font-family: 'Shrikhand';
-  font-weight: normal;
-}
-
 .fonction {
   padding: 30px;
-}
-
-h2.font {
-  padding: 10px 0 10px 0;
-}
-
-p.font {
-  padding-bottom: 5px;
-  color: #000;
-}
-
-p.font1 {
-  padding-bottom: 5px;
-  font-size: 18px;
-  font-family: 'Shrikhand';
 }
 
 .btn {
@@ -153,8 +128,10 @@ h3 {
 .numero {
   font-size: 13px;
   font-weight: bold;
-  padding: 5px 7px 5px 7px;
-  border-radius: 40px;
+  width: 25px;
+  height: 25px;
+  padding: 5px 8px;
+  border-radius: 50%;
   background-color: #9356dc;
   color: white;
   position: relative;
@@ -163,12 +140,11 @@ h3 {
 
 .fa-mobile-screen-button, .fa-list-ul, .fa-store {
   padding: 15px;
-  color: gray;
   position: relative;
   left: -10px;
 }
 
-.fa-mobile-screen-button:hover, .fa-list-ul:hover, .fa-store:hover {
+.color {
   color: #9356dc;
 }
 
@@ -187,14 +163,14 @@ main {
   background-color: #f2f2f2;
 }
 
-#carte_resto {
+.carte_resto {
   border-radius: 25px;
   background-color: white;
   -webkit-box-shadow: 0 10px 10px 0 #bebdbd;
           box-shadow: 0 10px 10px 0 #bebdbd;
 }
 
-#carte_resto:hover {
+.carte_resto:hover {
   opacity: 0.8;
   -webkit-box-shadow: 0 5px 10px 0 #9356dc;
           box-shadow: 0 5px 10px 0 #9356dc;
@@ -208,7 +184,14 @@ main img {
      object-fit: cover;
 }
 
-.carte_text h3 {
+.text_coeur {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.text h3 {
   font-size: 20px;
   margin: 10px 20px;
   color: black;
@@ -225,38 +208,41 @@ main img {
   font-size: 18px;
 }
 
-.far.fa-heart::before {
-  font-size: 25px;
-  color: #000;
+.text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
-@-webkit-keyframes color-heart {
-  0% {
-    color: #000;
-    opacity: 0;
-  }
-  100% {
-    color: #9356dc;
-    opacity: 1;
-  }
+.text_coeur .coeur i {
+  position: absolute;
+  top: 40px;
 }
 
-@keyframes color-heart {
-  0% {
-    color: #000;
-    opacity: 0;
-  }
-  100% {
-    color: #9356dc;
-    opacity: 1;
-  }
+.fa-solid, .fa-regular {
+  background-color: transparent;
 }
 
-.fa-heart:hover {
-  -webkit-animation: color-heart 1s 1;
-          animation: color-heart 1s 1;
-  -webkit-transition: 1s;
-  transition: 1s;
+.coeur {
+  width: 40px;
+}
+
+.vide {
+  font-size: 20px;
+  color: #9356dc;
+  opacity: 1;
+}
+
+.coeur .fa-heart.plein {
+  font-size: 20px;
+  color: #9356dc;
+  opacity: 0;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+.fa-heart.plein:hover {
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -344,11 +330,6 @@ span {
   }
   .background {
     background-image: iinear-gradient(#f2f2f2, rgba(147, 86, 220, 0.3), rgba(255, 121, 218, 0.3));
-  }
-  #presentation {
-    width: 40%;
-    background-image: iinear-gradient(#f2f2f2, rgba(147, 86, 220, 0.3), rgba(255, 121, 218, 0.3));
-    padding-top: 25px;
   }
   .fonction {
     width: 40%;
