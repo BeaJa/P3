@@ -32,7 +32,7 @@ header {
   display: -ms-flexbox;
   display: flex;
   padding: 10px 0 10px;
-  gap: 65px;
+  gap: 95px;
 }
 
 #index {
@@ -50,23 +50,21 @@ header {
   position: relative;
 }
 
+/* Main - menu */
 main img {
   width: 100%;
   display: block;
 }
 
-/* Main - menu */
-main {
-  margin: 0 10px;
-}
-
 h1 {
-  font-size: 35px;
+  font-size: 27px;
   font-weight: normal;
 }
 
 .fa-heart {
   font-size: x-large;
+  position: relative;
+  left: 190px;
 }
 
 .titre {
@@ -83,11 +81,8 @@ h1 {
 
 .carte {
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 25px 20px 30px 20px;
   border-radius: 25px 25px 0 0;
-  z-index: 2;
-  position: relative;
-  top: -25px;
 }
 
 h2 {
@@ -113,7 +108,7 @@ h4 {
   background-color: #99e2d0;
 }
 
-.plat1, .plat2, .plat3 {
+.plat1, .plat2, .plat3, .plat4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,19 +121,29 @@ h4 {
   overflow: hidden;
 }
 
+.plat1:hover .plat2 .plat3 .plat4 {
+  -webkit-box-shadow: 0 5px 7px #9356dc;
+          box-shadow: 0 5px 7px #9356dc;
+}
+
 .plat1 {
-  -webkit-animation: apparition1 1s ease;
-          animation: apparition1 1s ease;
+  -webkit-animation: apparition1 2s ease;
+          animation: apparition1 2s ease;
 }
 
 .plat2 {
-  -webkit-animation: apparition2 2s ease;
-          animation: apparition2 2s ease;
+  -webkit-animation: apparition2 4s ease;
+          animation: apparition2 4s ease;
 }
 
 .plat3 {
-  -webkit-animation: apparition3 3s ease;
-          animation: apparition3 3s ease;
+  -webkit-animation: apparition3 6s ease;
+          animation: apparition3 6s ease;
+}
+
+.plat4 {
+  -webkit-animation: apparition4 8s ease;
+          animation: apparition4 8s ease;
 }
 
 @-webkit-keyframes apparition1 {
@@ -195,7 +200,25 @@ h4 {
   }
 }
 
-#ticket {
+@-webkit-keyframes apparition4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes apparition4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.ticket {
   width: 90%;
 }
 
@@ -213,8 +236,7 @@ h4 {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  width: 50px;
-  padding-left: 20px;
+  width: 100px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -222,7 +244,7 @@ h4 {
 
 p {
   width: 50px;
-  padding-bottom: 8px;
+  padding: 10px 20px;
 }
 
 .e {
@@ -235,28 +257,21 @@ p {
   left: 24px;
 }
 
-#ticket:hover h4 {
+.ticket:hover h4 {
   cursor: pointer;
   width: 80%;
 }
 
-#ticket:hover + .euro {
+.ticket:hover + .euro {
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
   -webkit-transform: translateX(-65px);
           transform: translateX(-65px);
 }
 
-/*
-.e {
-    &.rotation {
-        transform: rotate(1turn);
-    }
-}*/
-.fa-circle-check {
-  position: relative;
-  -webkit-animation: rotation -1s 2s linear 999;
-          animation: rotation -1s 2s linear 999;
+.ticket:hover + .euro .fa-circle-check {
+  -webkit-animation: rotation 1s 0.5s linear 1;
+          animation: rotation 1s 0.5s linear 1;
 }
 
 @-webkit-keyframes rotation {
@@ -265,8 +280,8 @@ p {
             transform: rotate(0deg);
   }
   50% {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
   100% {
     -webkit-transform: rotate(0deg);
@@ -280,8 +295,8 @@ p {
             transform: rotate(0deg);
   }
   50% {
-    -webkit-transform: rotate(-360deg);
-            transform: rotate(-360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
   100% {
     -webkit-transform: rotate(0deg);
@@ -291,6 +306,7 @@ p {
 
 #bouton {
   text-align: center;
+  padding-top: 20px;
 }
 
 button {
@@ -300,25 +316,28 @@ button {
   border-radius: 30px;
   font-family: "Roboto", sans-serif;
   font-size: 1.2em;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
+  background-image: linear-gradient(#ff79da, #9356dc);
   color: white;
-  -webkit-box-shadow: 0 5px 10px 0 #bebdbd;
-          box-shadow: 0 5px 10px 0 #bebdbd;
+  -webkit-box-shadow: 0 10px 10px 0 #bebdbd;
+          box-shadow: 0 10px 10px 0 #bebdbd;
   cursor: pointer;
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 button:hover {
-  background: #c9abee;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ae81e4), to(#f38cd6));
+  background-image: linear-gradient(#ae81e4, #f38cd6);
   -webkit-box-shadow: 0 5px 10px 0 #9356dc;
           box-shadow: 0 5px 10px 0 #9356dc;
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 /*Footer - Infos*/
 footer {
-  margin: 0 10px 5px 10px;
   padding-left: 20px;
-  padding-bottom: 10px;
   background-color: #413e3e;
 }
 
@@ -367,5 +386,92 @@ a::before {
 span {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+}
+
+/* tablette*/
+@media screen and (min-width: 511px) and (max-width: 870px) {
+  .euro {
+    width: 150px;
+    left: 43px;
+  }
+  .euro p {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .e {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+/* Desktop*/
+@media screen and (min-width: 871px) and (max-width: 2000px) {
+  .logo {
+    gap: 600px;
+  }
+  main img {
+    height: 400px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .carte {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #ticket {
+    width: 95%;
+  }
+  .titre {
+    display: inline-block;
+    width: 97%;
+    height: 40px;
+  }
+  .titre, h1 {
+    margin: 0;
+  }
+  .fa-heart {
+    position: relative;
+    left: 1180px;
+  }
+  .entrees, .plats, .desserts {
+    width: 30%;
+  }
+  .euro {
+    width: 155px;
+    left: 43px;
+  }
+  .euro p {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .e {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  footer {
+    height: 200px;
+  }
+  .logo_footer {
+    width: 200px;
+  }
+  .infos {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 /*# sourceMappingURL=page1.css.map */

@@ -22,6 +22,43 @@ $backgroundtransparent2 : rgba(255, 121, 218, 0.3);
     box-sizing: border-box;
     }
 }
+.papierpeint {
+    box-sizing : border-box;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9356dc;
+    box-shadow: 5px 5px 100px 25px #ff79da inset;
+    animation: dispa 3s 2s 1 forwards;
+}  
+.loader1, .loader2, .loader3 {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin : 10px;
+    background: #99e2d0;
+    border-radius: 50%;
+    border-top: 5px solid #9356dc;
+    animation: tour 2s linear infinite;
+    box-shadow: 0 10px 10px #ff79da inset;
+}
+@keyframes tour {
+    0% { transform: rotate(0deg); opacity: 0;}
+    25% { transform: rotate(0deg); opacity: 0.5;}
+    50% { transform: rotate(360deg); opacity: 1;}
+    75% { transform: rotate(360deg); opacity: 0.5;}
+    100% { transform: rotate(360deg); opacity: 0;}
+}
+@keyframes dispa {
+    from { opacity: 1; z-index: 9999999; }
+    to { opacity: 0; z-index: -1; }
+  }
 
 /*Header - Logo */
 
@@ -73,14 +110,15 @@ p {
     text-decoration: none;
     font-family: 'Roboto';
     font-size: 1.2em;
-    background-color :linear-gradient(180deg, $colorprim, $colorsecond) ;
+    background-image : linear-gradient($colorprim, $colorsecond) ;
     color: white;
-    box-shadow: 0 5px 10px 0 $boxshadow;
-    transition: background-color 2s;
+    box-shadow: 0 5px 10px 0 $colorprim;
+    transition: 1.5s;
 }
 #bouton_explorer:hover {
-    background-color: lighten($colorsecond 2%) ;
-    box-shadow: 0 5px 10px 0 $colorprim;
+    background-image: linear-gradient($colorsecond, $colorprim);
+    filter: brightness(0.95);
+    box-shadow: 0 5px 10px 0 $colorsecond;
 }
 .fonction {
     padding: 30px ;
@@ -89,6 +127,7 @@ p {
     background-color: $backgroundcolor;
     border-radius :20px ;
     margin-block-start: 20px;
+    transition: 1s;
 }
 .btn:hover {
     background-color: $backgroundtransparent2 ;
@@ -113,15 +152,15 @@ h3 {
     font-weight: bold;
     width: 25px;
     height: 25px;
-    padding: 5px 8px;
-    border-color: 2px solid black;
+    padding: 5px 5px;
     border-radius: 50%;
     background-color:$colorprim;
     color: white;
     position: relative;
     left: -15px;
-    text-align: center;
+    text-align: center; 
 }
+
 .fa-mobile-screen-button, .fa-list-ul, .fa-store {
     padding: 15px;
     position: relative;
@@ -137,8 +176,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin: 0 10px;
-    padding: 10px 10px 40px ;
+    margin: 0;
+    padding: 10px 15px 40px ;
     background-color: $backgroundcolor;
     
 }
@@ -146,14 +185,18 @@ main {
     border-radius: 25px ;
     background-color: white;
     box-shadow: 0 10px 10px 0 $boxshadow;
+    overflow: hidden;
+    transition: 1s;
 }
 .carte_resto:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     box-shadow: 0 5px 10px 0 $colorprim;
+    transform: scale(1.05);
 }
-main img {
+.image img{
     width: 100%;
-    max-height: 245px;
+    height: 260px;
+    margin: 0;
     border-radius: 25px 25px 0 0 ;
     object-fit: cover;
 }
@@ -183,28 +226,38 @@ main img {
     background-color: transparent;
 }
 .coeur {
+    position: relative;
     width: 40px;
-}
-.vide {
-    font-size: 20px;
-    color : $colorprim;
-    opacity: 1;
-}
-.coeur{
-    .fa-heart.plein {
-        font-size: 20px;
-        color: $colorprim ;
-        opacity: 0;
-        transition: 0.1s ease;
-    }
-}
-.fa-heart.plein:hover {
-    opacity: 1;
     cursor: pointer;
 }
+.fa-heart {
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left:0;
+    transition: 0.2s;
+  }
+.vide {
+    color : $colorprim;
+    opacity: 1;
+    transition : 1s;
+}
+.plein {
+    background: -webkit-linear-gradient($colorprim, $colorsecond);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: 1s;
+}
+.coeur:hover .vide {
+    opacity: 0;
+}
+.coeur:hover .plein {
+    opacity: 1;
+}
+
 /*Footer - Infos*/
 footer {
-    margin: 0 10px 5px 10px;
     padding-left: 20px;
     padding-bottom: 10px;
     background-color: $backgroundcolorfooter;
@@ -244,26 +297,27 @@ span {
 }
 
 /* tablette*/
-@media screen and (min-width:511px) and (max-width:2000px)
+@media screen and (min-width:511px) and (max-width:870px)
 {
     body {
-        margin: 0 10px;
+        margin: 0;
     }
    
     section {
         display: flex;
         flex-wrap: wrap;
+        background: linear-gradient($backgroundcolor, $backgroundtransparent1, $backgroundcolor) ;
+        
     }
     .barre_back {
         flex: 1;
-        margin-left: 10px;
     }
     #barre_recherche {
         padding-left: 25px;
         flex: 1;
     }
-    .background {
-        background-image: iinear-gradient($backgroundcolor, $backgroundtransparent1, $backgroundtransparent2);
+    #background {
+        background-image: linear-gradient($backgroundcolor, $backgroundtransparent1, $backgroundcolor);
     }
     .fonction {
         width: 40%;
@@ -271,20 +325,17 @@ span {
         padding : 10px;
     }
     main {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         padding: 20px;
+        flex-flow: row wrap;
+        justify-content: space-around;
     }
-    main, h2 {
-        flex: 1;
+    h2 {
+        width: 100%;
     }
-    main img {
-        max-height: 320px;
+    .carte_resto {
+        width : 47% ;
     }
-    #carte_resto {
-        width: 40%;
-    }
+
     footer {
         height: 180px;
     }
@@ -294,5 +345,49 @@ span {
     .infos {
         flex-direction: row;
         justify-content: space-around;
+    }
+}
+/* Desktop*/
+
+@media screen and (min-width:871px) and (max-width:2000px)
+{
+    
+    #background {
+        background-image: linear-gradient(white, $backgroundcolor, white) ;
+        background-size: 500% 500%;
+        animation: gradient 10s ease infinite;
+    }
+    @keyframes gradient {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 50% 100%;}
+        100% {background-position: 50% 0%;}
+      
+    }
+    
+    .fonction {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-image: linear-gradient(white, $backgroundcolor);
+    }
+    .btn {
+        flex-grow: 1;
+        margin: 0 30px ;
+    }
+    .icone {
+        margin: 0;
+    }
+    main {
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+    main h2 {
+        width: 100%;
+    }
+    .carte_resto {
+        width : 23% ;
+    }
+    .logo_footer {
+        width: 20%;
     }
 }
