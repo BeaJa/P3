@@ -17,7 +17,7 @@ $boxshadow:#bebdbd ;
 $backgroundcolor : #f2f2f2 ;
 $backgroundcolorfooter : #3e3e3c;
 $backgroundtransparent1 : rgb(174, 129, 228);
-$backgroundtransparent2 : rgb(243, 140, 214);
+$backgroundtransparent2 : rgb(245, 174, 225);
 
 
 @media screen and (min-width: 510px) {
@@ -35,13 +35,15 @@ header {
 .logo {
     display: flex;
     padding: 10px 0 10px;
-    gap: 95px;
 }
 #index {
-   padding-left: 20px;
+    padding-left: 20px;
+    flex-shrink: 1;
 }
-.log {
-    max-width: 300px;
+img#log {
+    width: 100%;
+    max-height: 50px;
+    flex-grow: 3;
 }
 .fas.fa-arrow-left::before {
     font-family: 'fontawesome';
@@ -50,20 +52,20 @@ header {
     position: relative;
 }
 
-/* Main - menu */
+/* Main --> Section = image + menu */
 
-main img {
+#image img {
     width: 100%;
-    display: block;
+    height: 400px
 }
 h1 {
+    margin: 0;
     font-size: 27px;
     font-weight: normal;
 }
 .fa-heart {
     font-size: x-large;
     position: relative;
-    left: 190px;
 }
 .titre {
     display: flex;
@@ -71,14 +73,17 @@ h1 {
     align-items: center;
 }
 .carte {
+    position: relative;
+    top: -30px;
+    width: 100%;
     background-color: $backgroundcolor;
-    padding: 25px 20px 30px 20px;
+    padding: 30px 20px 30px 20px;
     border-radius: 25px 25px 0 0;
 }
 h2 {
     font-size: 1.2em;
     margin-top: 15px;
-    padding: 10px 0;
+    padding: 15px 0;
     font-weight: normal;
 }
 h3 {
@@ -96,7 +101,7 @@ h4 {
 }
 .plat1, .plat2, .plat3, .plat4 {
     display: flex;
-    width: 100%;
+    height: 69px;
     margin: 18px 0;
     border-radius: 20px;
     background-color: white;
@@ -135,8 +140,7 @@ h4 {
     100% {opacity: 1;}
 }
 .ticket {
-    width: 90%;
-    
+    flex-grow: 1;
 }
 h4 {
     overflow: hidden;
@@ -144,26 +148,29 @@ h4 {
     text-overflow: ellipsis;
     transition: width 0s 200ms ease-in-out;
 }
+.plat1 {
+    justify-items: left;
+}
 .euro {
     font-family: $font1;
     display: flex;
     position: relative;
     width: 100px;
     align-items: flex-end;
+    left: 57px;
+    gap: 10px;
 }
 p {
-    width: 50px;
-    padding: 10px 20px;
-
+    padding: 0 15px 10px 0;
+    border: 1px solid white;
 }
-.e {
+span.e {
     display: block;
     padding: 25px;
-    width: 50px;
+    border: 1px solid $colortertiaire;
     background-color: $colortertiaire;
     color: white;
     position: relative;
-    left: 24px;
 }
 .ticket:hover h4{
     cursor: pointer;
@@ -171,16 +178,16 @@ p {
 }
 .ticket:hover + .euro {
     transition: 1s ease-out ;
-    transform: translateX(-65px) ; 
+    transform: translateX(-79px) ; 
 }
 .ticket:hover + .euro .fa-circle-check {
-    animation: rotation 1s 0.5s linear 1;
+    animation: rotation 0.5s 0.5s linear 1;
 }
 
 @keyframes rotation {
     0% { transform: rotate(0deg);}
-    50% { transform: rotate(360deg);}
-    100% {transform: rotate(0deg)}
+    50% { transform: rotate(180deg);}
+    100% {transform: rotate(360deg)}
 }
 #bouton {
     text-align: center;
@@ -208,8 +215,10 @@ button:hover {
 /*Footer - Infos*/
 
 footer {
-    padding-left: 20px;
-    background-color: rgb(65, 62, 62);
+    position: relative;
+    top: -30px;
+    padding: 0 0 20px 20px;
+    background-color: $backgroundcolorfooter;
 }
 .logo_footer {
     width: 35%;
@@ -226,13 +235,13 @@ a.fa-solid.fa-utensils {
     display: flex;
     align-items: center;
 }
-a.fa-solid:hover {
-    color: $colorprim;
-}
 a {
     color: white;
     text-decoration: none;
     padding: 10px 20px 10px 0;
+}
+a.fa-solid:hover {
+    color: $colorprim;
 }
 a::before {
     padding:0 20px 5px 0;
@@ -241,29 +250,21 @@ span {
     font-family: $font1;
     font-weight: 400;
 }
+
 /* tablette*/
-@media screen and (min-width:511px) and (max-width:870px)
+@media screen and (min-width:511px) and (max-width:900px)
 {
-   .euro {
-       width: 150px;
-        left: 43px;
-   }
-   .euro p {
-       flex: 1;
-   }
-   .e {
-       flex: 1;
-   }
+    .ticket:hover + .euro {
+        transition: 1s ease-out ;
+        transform: translateX(-75px) ;
+    }
 }
+
 /* Desktop*/
 
-@media screen and (min-width:871px) and (max-width:2000px)
+@media screen and (min-width:901px) and (max-width:2000px)
 {
-    .logo {
-        gap : 600px
-    }
-    main img {
-        height: 400px;
+    #image img {
         object-fit: cover;
     }
     .carte {
@@ -271,37 +272,36 @@ span {
         flex-flow: row wrap;
         justify-content: space-around;
     }
-    #ticket {
+    .ticket {
         width: 95%;
     }
     .titre {
-        display: inline-block;
         width: 97%;
         height: 40px;
+        display: flex;
+        margin : 0 ;
+        justify-content: center ;
+        gap: 20px;
     }
-    .titre, h1 {
-        margin : 0
+    h1 {
+        font-size: 32px;
+        text-shadow: 0px 5px 10px $colorprim;
+        flex: 2;
     }
     .fa-heart {
         position: relative;
-        left: 1180px;
-    
     }
     .entrees, .plats, .desserts {
         width: 30%;
     }
-    .euro {
-        width: 155px;
-        left: 43px;
+    .plat1, .plat2, .plat3, .plat4 {
+        margin: 25px 0;
     }
-    .euro p {
-        flex: 1;
-    }
-    .e {
-        flex: 1;
+    button {
+        padding: 20px 70px;
     }
     footer {
-        height: 200px;
+        padding-bottom: 30px;
     }
     .logo_footer {
         width: 200px;

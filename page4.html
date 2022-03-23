@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta htth4-equiv="X-UA-Comh4atible" content="IE=edge">
-    <meta name="viewh4ort" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="page1.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
@@ -16,18 +16,19 @@
     <!--Logo-->
         <header>
             <div class="logo">
-                <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
-                <img class="log" src="images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood">
+                <a href="index.html" id="index"><i class="fas fa-arrow-left"></i></a>
+                <img id="log" src="images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood">
             </div>
         </header>
     
     <!--Image + Titre + Menu + Commande-->
     
         <main>
-            <img src="images/restaurants/delicedessens.jpg" alt="Le délice des sens">
-
-            <div class="carte">
-                <span class="titre"><h1>Le délice des sens<i class="fa-solid fa-heart"></i></h1></span>
+            <div id="image">
+                <img src="images/restaurants/delicedessens.jpg" id="image" alt="Le délice des sens">
+            </div>
+            <section class="carte">
+                <div class="titre"><h1>Le délice des sens</h1><i class="fa-regular fa-heart"></i></div>
                 <div class="entrees">
                     <h2>ENTREES</h2>
                         <div class="souligne"></div>
@@ -124,7 +125,7 @@
                 <div id="bouton">
                     <button type="submit">Commander</button>
                 </div>
-            </div> 
+            </section> 
         </main>
     
     <!--Info + Contact-->
@@ -137,7 +138,7 @@
                 <a class="fa-solid fa-utensils" href="#"><span>Proposer un restaurant</span></a>	
                 <a class="fa-solid fa-handshake-angle" href="#"><span>Devenir partenaire</span></a>
                 <a href="#" class="mentions">Mentions légales</a>
-                <a href="mailto:email@exemple.com?subjet=subjet text" class="contact">Contact</a>
+                <a href="mailto:email@exemple.com?subjet=subjettext" class="contact">Contact</a>
             </div>
         </footer>
     
