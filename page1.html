@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="page1.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="page1.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1d406d3eaf.js" crossorigin="anonymous"></script>
@@ -28,7 +28,15 @@
                 <img src="images/restaurants/Palettedugout.jpg" alt="La palette du goût">
             </div>
             <section class="carte">
-                <div class="titre"><h1>La palette du goût</h1><i class="fa-regular fa-heart"></i></div>
+                <div class="titrecoeur">
+                    <div class="titre">
+                        <h1>La palette du goût</h1>
+                    </div>
+                    <div id="coeur">
+                        <i class="fa-solid fa-heart plein"></i>
+                        <i class="fa-regular fa-heart vide"></i>
+                    </div>
+                </div>
                 <div class="entrees">
                     <h2>ENTREES</h2>
                         <div class="souligne"></div>
@@ -38,7 +46,7 @@
                                 <h4>Au piment d'Espelette</h4>
                         </div>
                         <div class="euro"><p>25€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>	
                     </div>
                     <div class="plat2">
@@ -47,7 +55,7 @@
                                 <h4>Et ses copeaux de truffe noire</h4>
                         </div>
                         <div class="euro"><p>35€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>
                     </div>
                     <div class="plat3">
@@ -56,7 +64,7 @@
                                 <h4>Assaisonné à la truffe sur lit de caviar</h4>
                         </div>
                         <div class="euro"><p>20€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check rotation"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check rotation"></i></span>
                         </div>
                     </div>
                 </div>
@@ -69,7 +77,7 @@
                                 <h4>Accompagné de sa ribambelle de légumes</h4>
                         </div>
                         <div class="euro"><p>40€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>
                     </div>
                     <div class="plat2">
@@ -78,7 +86,7 @@
                                 <h4>A la truffe noire sur sa purée de panais</h4>
                         </div>
                         <div class="euro"><p>35€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>
                     </div>
                     <div class="plat3">
@@ -87,7 +95,7 @@
                                 <h4>Aux agrumes</h4>
                         </div>
                         <div class="euro"><p>44€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>
                     </div>
                 </div>
@@ -100,7 +108,7 @@
                                 <h4>Revisité</h4>
                         </div>
                         <div class="euro"><p>18€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>
                     </div>
                     <div class="plat2">
@@ -109,7 +117,7 @@
                                 <h4>Et glace à la vanille de Madagascar</h4>
                         </div>
                         <div class="euro"><p>22€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>
                     </div>
                     <div class="plat3">
@@ -118,7 +126,7 @@
                                 <h4>Au piment d'Espelette et à la truffe noire</h4>
                         </div>
                         <div class="euro"><p>23€</p>
-                            <span class="e"><i class="fa-regular fa-circle-check"></i></span>
+                            <span class="e"><i class="fa-solid fa-circle-check"></i></span>
                         </div>
                     </div>
                 </div>
@@ -134,12 +142,14 @@
             <div>
                 <img src="images/logo/ohmyfood@2x2.svg" class="logo_footer" alt="Logo_Ohmyfood">
             </div>
-            <div class="infos">
-                <a class="fa-solid fa-utensils" href="#"><span>Proposer un restaurant</span></a>	
-                <a class="fa-solid fa-handshake-angle" href="#"><span>Devenir partenaire</span></a>
-                <a href="#" class="mentions">Mentions légales</a>
-                <a href="mailto:email@exemple.com?subjet=subjettext" class="contact">Contact</a>
-            </div>
+            <nav class="infos">
+                <ul>
+                    <li><a class="fa-solid fa-utensils" href="#"><span>Proposer un restaurant</span></a></li>
+                    <li><a class="fa-solid fa-handshake-angle" href="#"><span>Devenir partenaire</span></a></li>
+                    <li><a href="#" class="mentions">Mentions légales</a></li>
+                    <li><a href="mailto:email@exemple.com?subjet=subjettext" class="contact">Contact</a></li>
+                </ul>
+            </nav>
         </footer>
     
 </body>

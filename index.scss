@@ -11,13 +11,14 @@ h1, h2, h3, p, a {
 $colorprim :#9356dc;
 $colorsecond :#ff79da;
 $colortertiaire : #99e2d0;
-$boxshadow:#bebdbd ;
+$boxshadow1:#bebdbd ;
+$boxshadow2: rgb(97, 96, 96);
 $backgroundcolor : #f2f2f2;
 $backgroundcolorfooter : #3e3e3c;
 $backgroundtransparent1 : rgb(174, 129, 228);
 $backgroundtransparent2 : rgb(245, 174, 225);
 
-@media screen and (min-width: 250px) and (max-width: 510px) {
+@media screen and (max-width: 510px) {
     * {
     box-sizing: border-box;
     }
@@ -35,7 +36,7 @@ $backgroundtransparent2 : rgb(245, 174, 225);
     align-items: center;
     background-color: $backgroundtransparent1;
     box-shadow: 5px 5px 100px 25px $backgroundtransparent2 inset;
-    animation: dispa 3s 2s 1 forwards;
+    animation: dispa 2s 2s 1 forwards;
 }  
 .loader1, .loader2, .loader3 {
     width: 40px;
@@ -45,12 +46,12 @@ $backgroundtransparent2 : rgb(245, 174, 225);
     background: #99e2d0;
     border-radius: 50%;
     border-top: 5px solid $colorprim;
-    animation: tour 2s linear infinite;
+    animation: tour 1s linear infinite;
     box-shadow: 0 10px 10px $colorsecond inset;
 }
 @keyframes tour {
     0% { transform: rotate(0deg); opacity: 0;}
-    25% { transform: rotate(0deg); opacity: 0.5;}
+    25% { transform: rotate(180deg); opacity: 0.5;}
     50% { transform: rotate(360deg); opacity: 1;}
     75% { transform: rotate(360deg); opacity: 0.5;}
     100% { transform: rotate(360deg); opacity: 0;}
@@ -80,12 +81,13 @@ header {
 }
 input {
     font-family: 'Roboto';
-    width: 150px;
+    width: 165px;
     font-size: 1.2em;
     color: black;
     border: none;
     background: transparent;
     outline: transparent;
+    cursor: pointer;
 }
 #background {
     text-align: center;
@@ -113,12 +115,11 @@ p {
     background-image : linear-gradient($colorprim, $colorsecond) ;
     color: white;
     box-shadow: 0 5px 10px 0 $colorprim;
-    transition: 1.5s;
+    transition: 0.5s;
 }
 #bouton_explorer:hover {
-    background-image: linear-gradient($colorsecond, $colorprim);
-    filter: brightness(0.95);
-    box-shadow: 0 5px 10px 0 $colorsecond;
+    filter: brightness(1.2);
+    box-shadow: 0 5px 10px 0 $boxshadow2;
 }
 .fonction {
     padding: 30px ;
@@ -127,12 +128,12 @@ p {
     background-color: $backgroundcolor;
     border-radius :20px ;
     margin-block-start: 20px;
-    transition: 1s;
+    transition: 0.3s;
 }
 .btn:hover {
     background-color: $backgroundtransparent2 ;
     cursor: pointer;
-    box-shadow: 0 5px 10px 0 $colorprim;
+    box-shadow: 0 5px 10px 0 $backgroundcolorfooter;
 }
 .icone {
     display: flex;
@@ -141,13 +142,15 @@ p {
     padding: 10px 0 10px 10px;
     margin: 5px 0 30px ;
     border-radius: 25px;
-    box-shadow: 0 5px 10px 0 $boxshadow;
+    box-shadow: 0 5px 10px 0 $boxshadow1;
 }
 h3 {
     font-size: 18px;
 }
 .numero {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 13px;
     font-weight: bold;
     width: 25px;
@@ -165,8 +168,9 @@ h3 {
     padding: 15px;
     position: relative;
     left: -10px;
+    color: black;
 }
-.color {
+.color:hover {
     color: $colorprim;
 }
 
@@ -184,9 +188,10 @@ main {
 .carte_resto {
     border-radius: 25px ;
     background-color: white;
-    box-shadow: 0 10px 10px 0 $boxshadow;
+    box-shadow: 0 10px 10px 0 $boxshadow1;
     overflow: hidden;
-    transition: 1s;
+    transition: 0.3s;
+    position: relative;
 }
 .carte_resto:hover {
     opacity: 0.9;
@@ -199,6 +204,17 @@ main {
     margin: 0;
     border-radius: 25px 25px 0 0 ;
     object-fit: cover;
+}
+.nouveau {
+    font-family: 'Roboto';
+    width: 100px;
+    padding: 5px 0px;
+    color: #23997b;
+    text-align: center;
+    background-color: $colortertiaire;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 .text_coeur {
     display: flex;
@@ -238,7 +254,7 @@ main {
     transition: 0.2s;
   }
 .vide {
-    color : $colorprim;
+    color : $backgroundcolorfooter;
     opacity: 1;
     transition : 1s;
 }
@@ -247,7 +263,7 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;
-    transition: 1s;
+    transition: 0.3s;
 }
 .coeur:hover .vide {
     opacity: 0;
@@ -264,12 +280,18 @@ footer {
 }
 .logo_footer {
     width: 30%;
-    padding: 20px 0;
+    padding: 20px 0 5px;
 }
-.infos {
+.infos ul {
+    list-style: none;
     font-family: 'Roboto';
     display: flex;
     flex-direction: column;
+    padding: 0%;
+    margin: 10px 0 10px
+}
+li {
+    padding-bottom: 5px;
 }
 .mentions:hover, .contact:hover {
     color: $colorprim;
@@ -277,11 +299,12 @@ footer {
 a.fa-solid.fa-utensils {
     display: flex;
     align-items: center;
+    font-size: 15px;
 }
 a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px 10px 0;
+    padding: 7px 20px 7px 0;
 }
 a.fa-solid:hover{
     color: $colorprim;
@@ -289,13 +312,14 @@ a.fa-solid:hover{
 a::before{
     padding:0 20px 5px 0;
 }
-span {
+span, .mentions, .contact {
     font-family: 'Roboto';
     font-weight: 400;
+    font-size: 17px;
 }
 
 /* tablette*/
-@media screen and (min-width:511px) and (max-width:870px)
+@media screen and (min-width:511px) and (max-width:768px)
 {
     body {
         margin: 0;
@@ -311,6 +335,10 @@ span {
     #barre_recherche {
         padding-left: 25px;
         flex: 1;
+    }
+    #bouton_explorer {
+        padding : 10px;
+        font-size: 20px;
     }
     #background {
         background-image: $backgroundcolor ;
@@ -332,25 +360,27 @@ span {
     h2 {
         width: 100%;
     }
+    h3 {
+        font-size: 15px;
+    }
+    .fa-mobile-screen-button, .fa-list-ul, .fa-store {
+        padding: 10px;
+    }
     .carte_resto {
         width : 47% ;
     }
     footer {
         height: 180px;
     }
-    .logo_footer {
-        width: 20%;
-    }
+  
     .infos {
-        flex-direction: row;
-        justify-content: space-around;
+        font-size: 10px;
     }
 }
 /* Desktop*/
 
-@media screen and (min-width:871px) and (max-width:2000px)
+@media screen and (min-width:768px)
 {
-    
     #background {
         background-image: linear-gradient(white, $backgroundcolor, white) ;
         background-size: 500% 500%;
@@ -376,6 +406,9 @@ span {
     .icone {
         margin: 0;
     }
+    h3 {
+        font-size: 20px;
+    }
     main {
         flex-flow: row wrap;
         justify-content: space-around;
@@ -392,8 +425,9 @@ span {
     .logo_footer {
         width: 200px;
     }
-    .infos {
+    .infos ul {
         flex-direction: row;
         justify-content: space-around;
+        align-items: center;
     }
 }
