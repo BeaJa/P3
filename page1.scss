@@ -45,7 +45,7 @@ $backgroundtransparent2 : rgb(245, 174, 225);
     position: relative;
 }
 
-/* Main --> Section = image + menu */
+/* Section --> image + menu */
 
 #image img {
     width: 100%;
@@ -151,10 +151,11 @@ h2 {
     100% {opacity: 1;}
 }
 .ticket {
-    width: 90%;
+    flex: 2;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    transition: 0.5s ease-out ;
 }
 h3 {
     margin: 10px 0 5px 15px;
@@ -169,7 +170,6 @@ h4 {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    transition: width 0s 200ms ease-in-out;
 }
 .euro {
     font-family: $font1;
@@ -177,11 +177,11 @@ h4 {
     position: relative;
     width: 100px;
     align-items: flex-end;
-    left: 57px;
+    left: 55px;
     
 }
 p {
-    padding: 0 30px 10px 0;
+    padding: 0 15px 10px 0;
     border: 1px solid white;
 }
 span.e {
@@ -198,7 +198,7 @@ span.e {
 }
 .ticket:hover + .euro {
     transition: 0.5s ease-out ;
-    transform: translateX(-85px) ; 
+    transform: translateX(-75px) ; 
 }
 .ticket:hover + .euro .fa-circle-check {
     animation: rotation 0.5s 0.3s linear 1;
@@ -245,20 +245,23 @@ footer {
     padding: 20px 0 5px;
 }
 .infos ul {
-    list-style: none;
-    font-family: 'Roboto';
+ 
     display: flex;
     flex-direction: column;
+    list-style: none;
     padding: 0%;
     margin: 10px 0 10px
 }
-li {
+li span, .mentions, .contact {
     padding-bottom: 5px;
+    font-family: 'Roboto';
+    font-size: 15px ;
+    font-weight: 400 ;
 }
 .mentions:hover, .contact:hover {
     color: $colorprim;
 }
-a.fa-solid.fa-utensils {
+a.fa-solid {
     display: flex;
     align-items: center;
     font-size: 15px;
@@ -266,7 +269,7 @@ a.fa-solid.fa-utensils {
 a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px 10px 0;
+    padding: 10px 20px 5px 0;
 }
 a.fa-solid:hover {
     color: $colorprim;
@@ -274,14 +277,10 @@ a.fa-solid:hover {
 a::before {
     padding:0 20px 0px 0;
 }
-span, .mentions, .contact {
-    font-family: $font1;
-    font-weight: 400;
-    font-size: 17px
-}
+
 
 /* tablette*/
-@media screen and (min-width:511px) and (max-width:768px) 
+@media screen and (min-width:511px) and (max-width:810px) 
 {
     .logo {
         gap: 30% 30%;
@@ -289,13 +288,16 @@ span, .mentions, .contact {
     h2 {
         width: 100%;
     }
+    span .e {
+        padding: 22px 35px 22px 22px;
+    }
     ul {
         flex-direction: row;
     }
 }
 /* Desktop*/
 
-@media screen and (min-width:768px)
+@media screen and (min-width:811px)
 {
     .logo {
         gap: 40% 40%;
@@ -307,7 +309,7 @@ span, .mentions, .contact {
     .carte {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: space-around;
         
     }
     .titrecoeur {
@@ -317,14 +319,13 @@ span, .mentions, .contact {
         font-size: 32px;
         flex: 2;
     }
-    .ticket:hover + .euro {
-        transition: 0.5s ease-out ;
-        transform: translateX(-85px) ; 
-    }
     .plat1, .plat2, .plat3, .plat4 {
         margin: 25px 0;
     }
-  
+    .ticket {
+        transform-origin: left;
+        transform: scale(0.9);
+    }
     #bouton {
         width: 100%;
         justify-content: center;

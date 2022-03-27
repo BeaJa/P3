@@ -282,8 +282,8 @@ h3 {
   color: #9356dc;
 }
 
-/*Main - Restaurants*/
-main {
+/*Section - Restaurants*/
+#restaurant {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,8 +312,8 @@ main {
   opacity: 0.9;
   -webkit-box-shadow: 0 5px 10px 0 #9356dc;
           box-shadow: 0 5px 10px 0 #9356dc;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .image img {
@@ -418,7 +418,7 @@ main {
 /*Footer - Infos*/
 footer {
   padding-left: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   background-color: #3e3e3c;
 }
 
@@ -480,16 +480,18 @@ span, .mentions, .contact {
 }
 
 /* tablette*/
-@media screen and (min-width: 511px) and (max-width: 768px) {
+@media screen and (min-width: 511px) and (max-width: 810px) {
   body {
     margin: 0;
   }
-  section {
+  #restaurant {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
     background: #f2f2f2;
   }
   .barre_back {
@@ -508,10 +510,9 @@ span, .mentions, .contact {
     font-size: 20px;
   }
   #background {
-    background-image: #f2f2f2;
+    background-color: #f2f2f2;
   }
   .fonction {
-    width: 40%;
     margin: 20px;
     padding: 10px;
   }
@@ -519,15 +520,6 @@ span, .mentions, .contact {
     background-color: white;
     -webkit-box-shadow: 0 5px 5px #ff79da;
             box-shadow: 0 5px 5px #ff79da;
-  }
-  main {
-    padding: 20px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
   }
   h2 {
     width: 100%;
@@ -550,7 +542,7 @@ span, .mentions, .contact {
 }
 
 /* Desktop*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 810px) {
   #background {
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(#f2f2f2), to(white));
     background-image: linear-gradient(white, #f2f2f2, white);
@@ -586,6 +578,10 @@ span, .mentions, .contact {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -webkit-box-align: center;
@@ -596,8 +592,8 @@ span, .mentions, .contact {
   }
   .btn {
     -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin: 0 30px;
   }
   .icone {
@@ -606,7 +602,7 @@ span, .mentions, .contact {
   h3 {
     font-size: 20px;
   }
-  main {
+  #restaurant {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
@@ -614,7 +610,7 @@ span, .mentions, .contact {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  main h2 {
+  h2 {
     width: 100%;
   }
   .carte_resto {
