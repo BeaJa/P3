@@ -1,0 +1,347 @@
+/* Style général*/
+/*Version mobile*/
+
+* {font-family: 'Roboto', sans-serif;}
+* {font-family: 'Shrikhand', cursive;}
+$font1: 'Roboto', sans-serif ;
+$font2: 'Shrikhand', cursive;
+
+h2, h3, h4, a, p {
+    font-family: $font1;
+    margin: 0;
+}
+
+
+$colorprim :#9356dc;
+$colorsecond :#ff79da;
+$colortertiaire : #99e2d0;
+$boxshadow1:#bebdbd ;
+$backgroundcolor : #f2f2f2 ;
+$backgroundcolorfooter : #3b3b3b;
+$backgroundtransparent1 : rgb(174, 129, 228);
+$backgroundtransparent2 : rgb(245, 174, 225);
+
+@media screen and (max-width: 510px) {
+    * {
+        box-sizing: border-box;
+        }
+}
+/*page1 - La palette du gout*/
+    /*Header*/
+
+.logo {
+    width: 100%;
+    display: flex;
+    padding: 5px 0 5px;
+    gap: 80px;
+}
+#index {
+    padding-left: 20px;
+}
+.fas.fa-arrow-left::before {
+    font-family: 'fontawesome';
+    color:black;
+    font-size: 30px;
+    position: relative;
+}
+
+/* Section --> image + menu */
+
+#image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+h1 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: normal;
+}
+.titrecoeur {
+    display: flex;
+    justify-content: space-between;
+}
+#coeur {
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+}
+.fa-heart {
+    background-color: transparent;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left:0;
+    transition: 0.3s;
+  }
+.vide {
+    color : $backgroundcolorfooter;
+    opacity: 1;
+    transition : 0.3s;
+}
+.plein {
+    background: -webkit-linear-gradient($colorprim, $colorsecond);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: 0.3s;
+}
+#coeur:hover .vide {
+    opacity: 0;
+}
+#coeur:hover .plein {
+    opacity: 1;
+}
+.carte {
+    position: relative;
+    margin-top: -30px;
+    background-color: $backgroundcolor;
+    padding: 30px 20px 30px 20px;
+    border-radius: 25px 25px 0 0;
+}
+h2 {
+    font-size: 1.2em;
+    margin-top: 15px;
+    padding: 15px 0;
+    font-weight: normal;
+}
+.souligne {
+    width: 50px;
+    height: 3px;
+    background-color: $colortertiaire;
+}
+.plat1, .plat2, .plat3, .plat4 {
+    display: flex;
+    height: 69px;
+    margin: 18px 0;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 5px 7px $boxshadow1;
+    overflow: hidden;
+}
+.plat1:hover .plat2 .plat3 .plat4{
+    box-shadow: 0 5px 7px $colorprim;
+}
+.plat1 {
+    animation: apparition1 1.3s 1s both ease ;
+}
+.plat2 {
+    animation: apparition2 1.3s 1.5s both ease;
+}
+.plat3 {
+    animation: apparition3 1.3s 2s both ease;
+}
+.plat4 {
+    animation: apparition4 1.3s 2.5s both ease;
+}
+@keyframes apparition1 {
+    0% { opacity: 0;}
+    100% { opacity: 1;} 
+}
+@keyframes apparition2 {
+    0% { opacity: 0;}
+    100% { opacity: 1;} 
+}
+@keyframes apparition3 {
+    0% { opacity: 0;}
+    100% { opacity: 1;} 
+}
+@keyframes apparition4 {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.ticket {
+    flex: 2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: 0.5s ease-out ;
+}
+h3 {
+    margin: 10px 0 5px 15px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+h4 {
+    font-weight: normal;
+    margin: 5px 0 10px 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.euro {
+    font-family: $font1;
+    display: flex;
+    position: relative;
+    width: 100px;
+    align-items: flex-end;
+    left: 55px;
+    
+}
+p {
+    padding: 0 15px 10px 0;
+    border: 1px solid white;
+}
+span.e {
+    display: block;
+    padding: 22px;
+    font-size: 23px;
+    border: 1px solid $colortertiaire;
+    background-color: $colortertiaire;
+    color: white;
+    position: relative;
+}
+.ticket:hover h4 {
+    cursor: pointer;
+}
+.ticket:hover + .euro {
+    transition: 0.5s ease-out ;
+    transform: translateX(-75px) ; 
+}
+.ticket:hover + .euro .fa-circle-check {
+    animation: rotation 0.5s 0.3s linear 1;
+}
+@keyframes rotation {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(90deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(270deg);}
+    100% {transform: rotate(360deg)}
+}
+#bouton {
+    text-align: center;
+    padding-top: 20px;
+}
+button {
+    margin: 20px 0 ;
+    padding : 18px 55px;
+    border: none;
+    border-radius: 30px;
+    font-family: $font1;
+    font-size: 1.2em;
+    background-image : (linear-gradient($colorsecond, $colorprim));
+    color: white;
+    box-shadow: 0 10px 10px 0 $boxshadow1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 5px 10px 0 $backgroundcolorfooter;
+    transition: 0.3s;
+}
+
+/*Footer - Infos*/
+
+footer {
+    position: relative;
+    padding: 0 0 20px 20px;
+    background-color: $backgroundcolorfooter;
+}
+.logo_footer {
+    width: 35%;
+    padding: 20px 0 5px;
+}
+.infos ul {
+ 
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0%;
+    margin: 10px 0 10px
+}
+li span, .mentions, .contact {
+    padding-bottom: 5px;
+    font-family: 'Roboto';
+    font-size: 15px ;
+    font-weight: 400 ;
+}
+.mentions:hover, .contact:hover {
+    color: $colorprim;
+}
+a.fa-solid {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px 5px 0;
+}
+a.fa-solid:hover {
+    color: $colorprim;
+}
+a::before {
+    padding:0 20px 0px 0;
+}
+
+
+/* tablette*/
+@media screen and (min-width:511px) and (max-width:810px) 
+{
+    .logo {
+        gap: 30% 30%;
+    }
+    h2 {
+        width: 100%;
+    }
+    span .e {
+        padding: 22px 35px 22px 22px;
+    }
+    ul {
+        flex-direction: row;
+    }
+}
+/* Desktop*/
+
+@media screen and (min-width:811px)
+{
+    .logo {
+        gap: 40% 40%;
+    }
+    #image img {
+        width: 100%;
+        object-fit: cover;
+    }
+    .carte {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        
+    }
+    .titrecoeur {
+        width: 97%;
+    }
+    h1 {
+        font-size: 32px;
+        flex: 2;
+    }
+    .plat1, .plat2, .plat3, .plat4 {
+        margin: 25px 0;
+    }
+    .ticket {
+        transform-origin: left;
+        transform: scale(0.9);
+    }
+    #bouton {
+        width: 100%;
+        justify-content: center;
+    }
+    button {
+        padding: 20px 70px;
+    }
+    footer {
+        padding-bottom: 30px;
+    }
+    .logo_footer {
+        width: 150px;
+    }
+    .infos ul {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
