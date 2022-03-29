@@ -510,7 +510,7 @@ span, .mentions, .contact {
     font-size: 20px;
   }
   #background {
-    background-color: #f2f2f2;
+    background-image: #f2f2f2;
   }
   .fonction {
     margin: 20px;
